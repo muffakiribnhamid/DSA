@@ -54,13 +54,13 @@ console.log(lastDigit(1534236469));
 
 //palindrome
 
-function palindrome(n) {
-    let originalN = n;
+function palindrome(x) {
+    let originalN = x;
     let reversedDigit = 0;
-    while(n > 0) {
-        let lastDigit = n % 10;
+    while(x > 0) {
+        let lastDigit = x % 10;
         reversedDigit = (reversedDigit * 10) + lastDigit;
-        n = Math.floor(n / 10);
+        x = Math.floor(x / 10);
     }
     if(reversedDigit == originalN ) {
         return true
@@ -70,3 +70,52 @@ function palindrome(n) {
 
 console.log(palindrome(111));
 console.log(palindrome(121));
+
+
+ 
+//armstrong numbers
+
+function armstrong(n) {
+    let originalN = n
+    let armNo = 0;
+    while(n > 0) {
+        let lastDigit = n % 10
+        armNo = armNo + (lastDigit ** 3)
+        n = Math.floor(n / 10)
+    }
+    if(armNo == originalN) {
+        return true
+    }
+    return false
+}
+
+console.log(armstrong(371));
+console.log(armstrong(35));
+
+
+
+function printDivisors(n) {
+    let divisors = []
+    for(let i = 1; i <= n; i++) {
+        if(n % i == 0) {
+            divisors.push(i)
+            
+        }
+    }
+    return divisors;
+}
+
+console.log(printDivisors(4));
+
+
+
+function sumOfDivisors(n) {
+    let result = 0;
+    for(let i = 1; i <= n; i++) {
+        result += i * Math.floor(n / i)
+
+    }
+    return result
+}
+
+console.log(sumOfDivisors(5));
