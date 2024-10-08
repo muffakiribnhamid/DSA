@@ -218,3 +218,26 @@ function eq(a,b) {
 console.log(eq(9,12));
 
 console.log(12%9);
+
+
+
+
+
+
+
+function pali(n) {
+    let originalN = n;
+    let reversedDigit = 0;
+    while(n > 0) {
+        let lastDigit = n % 10;
+        reversedDigit = (reversedDigit * 10) + lastDigit;
+        n = Math.floor(n / 10)
+    }
+    if(reversedDigit == originalN) {
+        return true
+    }
+    return false
+}
+
+console.log(pali(111));
+console.log(pali(102));
